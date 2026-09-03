@@ -42,6 +42,7 @@ export async function getLeaderboard(
         totalBidCents: row.total_bid_cents,
         score: row.score,
         thumbnailUrl: row.thumbnail_url,
+        url: row.url,
       })),
       isLive: true,
     };

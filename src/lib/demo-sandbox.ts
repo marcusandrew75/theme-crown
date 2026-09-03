@@ -34,6 +34,7 @@ type SandboxTemplate = {
   categorySlug: string;
   authorHandle: string;
   thumbnailUrl: string | null;
+  url: string;
 };
 
 type SandboxBid = {
@@ -142,6 +143,7 @@ export async function addSandboxTemplate(input: {
     categorySlug: input.categorySlug,
     authorHandle: persona.handle,
     thumbnailUrl: input.thumbnailUrl,
+    url: input.url,
   };
 
   await saveSandboxState({ ...state, templates: [...state.templates, template] });
@@ -174,6 +176,7 @@ function scoreAndRank(
     thumbnailUrl: string | null;
     totalBidCents: number;
     tagline?: string;
+    url?: string;
   }[],
 ): LeaderboardEntry[] {
   const scored = entries.map((entry) => ({
@@ -203,6 +206,7 @@ export async function getSandboxLeaderboard(
     authorHandle: entry.authorHandle,
     thumbnailUrl: entry.thumbnailUrl ?? null,
     tagline: entry.tagline,
+    url: entry.url,
     totalBidCents: entry.totalBidCents + (bidTotals.get(entry.slug) ?? 0),
   }));
 
@@ -213,6 +217,7 @@ export async function getSandboxLeaderboard(
       title: template.title,
       authorHandle: template.authorHandle,
       thumbnailUrl: template.thumbnailUrl,
+      url: template.url,
       totalBidCents: bidTotals.get(template.slug) ?? 0,
     }));
 

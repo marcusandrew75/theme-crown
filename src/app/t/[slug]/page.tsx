@@ -60,6 +60,18 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
         </div>
       </div>
 
+      {entry.url && (
+        <a
+          href={entry.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13.5px] font-medium shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-sm)]"
+          style={{ background: "var(--surface)", color: "var(--ink)" }}
+        >
+          View template ↗
+        </a>
+      )}
+
       <div className="mt-6 flex items-center gap-3">
         <RankBadge rank={entry.rank} />
         <div>

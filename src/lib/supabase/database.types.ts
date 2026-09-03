@@ -145,6 +145,7 @@ export type Database = {
           template_id: string;
           template_slug: string;
           title: string;
+          url: string;
           thumbnail_url: string | null;
           author_id: string;
           category_id: string;

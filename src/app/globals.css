@@ -109,13 +109,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  text-wrap: balance;
-  margin: 0;
+/* @layer base (not a bare rule): Tailwind utilities live in @layer
+   utilities, and an unlayered rule always beats a layered one regardless
+   of specificity — without this, `margin: 0` here would permanently win
+   over every mt-*/mb-* applied directly to an h1/h2/h3, no matter what
+   the class says. */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+  }
 }
 
 code,

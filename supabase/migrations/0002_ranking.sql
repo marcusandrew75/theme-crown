@@ -30,6 +30,7 @@ select
   t.id as template_id,
   t.slug as template_slug,
   t.title,
+  t.url,
   t.thumbnail_url,
   t.author_id,
   c.id as category_id,

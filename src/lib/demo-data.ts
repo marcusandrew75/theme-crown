@@ -23,6 +23,11 @@ export type LeaderboardEntry = {
   /** Short one-line description — not set for live/sandbox-submitted
    * templates, only the built-in demo entries that have real copy to pull. */
   tagline?: string;
+  /** Where to actually see/buy the template — the whole point of bidding
+   * is to send traffic here, so this should always be set in practice
+   * (submit requires it); optional only because older rows/paths that
+   * predate this field shouldn't hard-fail on a missing value. */
+  url?: string;
 };
 
 const BID_LADDER = [50000, 10000, 5000, 1000, 500, 100];
@@ -51,6 +56,9 @@ function buildEntries(
       score: scoreFor(totalBidCents),
       thumbnailUrl: item.thumbnailUrl,
       tagline: item.tagline,
+      // Every demo slug is the real Framer marketplace slug it was
+      // scraped from, so the detail page can link straight to it.
+      url: `https://www.framer.com/marketplace/templates/${item.slug}/`,
     };
   });
 }
