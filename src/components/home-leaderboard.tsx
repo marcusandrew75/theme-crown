@@ -32,6 +32,7 @@ export function HomeLeaderboard({ boards }: { boards: Board[] }) {
                 key={category.slug}
                 type="button"
                 onClick={() => setActiveSlug(category.slug)}
+                aria-pressed={isActive}
                 className="shrink-0 rounded-full px-4 py-2 text-[13.5px] font-medium whitespace-nowrap transition-colors"
                 style={
                   isActive

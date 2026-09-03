@@ -9,7 +9,10 @@
   --surface-raised: #ffffff;
   --ink: #241f19;
   --ink-soft: #6b6153;
-  --ink-faint: #9c927e;
+  /* #9c927e read at ~2.7:1 on --bg — fails WCAG AA (4.5:1) for the normal-
+     size text it's used on (timestamps, handles, taglines). This passes
+     at ~4.7:1 while staying visibly lighter than --ink-soft. */
+  --ink-faint: #756b58;
   /* Kept only for the rare true hairline (e.g. a table rule); everything
      else uses a shade step or a soft shadow instead. */
   --line: rgba(36, 31, 25, 0.08);

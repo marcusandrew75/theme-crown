@@ -52,7 +52,10 @@ export default async function HomePage() {
       <HomeLeaderboard boards={boards} />
 
       {/* ---------- how it works ---------- */}
-      <section id="how-it-works" className="bg-[var(--surface-sunken)]">
+      <section
+        id="how-it-works"
+        className="scroll-mt-[76px] bg-[var(--surface-sunken)]"
+      >
         <div className="mx-auto max-w-[1160px] px-4 py-10 sm:px-6 sm:py-14">
           <h2 className="mono text-[11.5px] font-medium tracking-[0.08em] text-[var(--ink-faint)] uppercase">
             How it works

@@ -65,7 +65,7 @@ export function BidForm({ slug }: { slug: string }) {
           <input
             type="number"
             min={1}
-            step={1}
+            step="any"
             placeholder="Custom"
             value={custom}
             onChange={(event) => setCustom(event.target.value)}
