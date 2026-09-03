@@ -60,7 +60,7 @@ export function BidForm({ slug }: { slug: string }) {
             </button>
           );
         })}
-        <label className="flex items-center gap-1 rounded-full bg-[var(--surface-sunken)] px-3.5 py-2 transition-shadow focus-within:shadow-[0_0_0_3px_var(--accent-soft)]">
+        <label className="flex items-center gap-1 rounded-full bg-[var(--surface-sunken)] px-3.5 py-2 transition-shadow focus-within:shadow-[0_0_0_3px_var(--accent-shadow)]">
           <span className="text-[14px] text-[var(--ink-faint)]">$</span>
           <input
             type="number"

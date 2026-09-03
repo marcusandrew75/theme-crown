@@ -58,27 +58,31 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a1510;
-    --surface: #221b14;
-    --surface-sunken: #16110c;
-    --surface-raised: #2b2118;
-    --ink: #f3ede2;
-    --ink-soft: #c2b6a3;
-    --ink-faint: #8c7f6b;
+    /* Neutral near-black + grey scale — no warm/rosewood tint. Pink is
+       reserved for --accent/--accent-deep (CTAs, links, prices, labels),
+       never used as a wash across large surfaces. */
+    --bg: #121212;
+    --surface: #1c1c1c;
+    --surface-sunken: #0a0a0a;
+    --surface-raised: #262626;
+    --ink: #f2f0ee;
+    --ink-soft: #a3a1a0;
+    --ink-faint: #928f8a;
     --line: rgba(255, 255, 255, 0.08);
     --line-strong: rgba(255, 255, 255, 0.14);
     --accent: #ff4fa0;
     --accent-deep: #ff8cc6;
-    /* A muted dark rosewood, not a saturated maroon — close in lightness
-       to --surface-raised so the #1 spotlight card reads as an elevated
-       surface with a warm tint, not a loud colored block. */
-    --accent-soft: #33212a;
-    --accent-ink: #1a0a14;
+    /* A neutral dark grey, not a pink-tinted one — the #1 spotlight card
+       (and anything else paired with --accent-deep text) reads as an
+       elevated grey surface that pink text/badges sit on top of, rather
+       than a colored wash. */
+    --accent-soft: #242424;
+    --accent-ink: #141414;
     --accent-shadow: rgba(255, 79, 160, 0.28);
     --secondary: #d99a7a;
     --secondary-soft: #3a2418;
 
-    --tile-1-bg: #33212a;
+    --tile-1-bg: #242424;
     --tile-1-ink: #ff8cc6;
     --tile-2-bg: #3a2418;
     --tile-2-ink: #d99a7a;

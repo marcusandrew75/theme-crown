@@ -32,7 +32,7 @@ export function LoginForm({ next }: { next: string }) {
           name="email"
           required
           placeholder="you@example.com"
-          className="rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-[14.5px] text-[var(--ink)] outline-none transition-shadow focus:shadow-[0_0_0_3px_var(--accent-soft)]"
+          className="rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-[14.5px] text-[var(--ink)] outline-none transition-shadow focus:shadow-[0_0_0_3px_var(--accent-shadow)]"
         />
       </label>
 

@@ -5,7 +5,7 @@ import { submitTemplate } from "@/app/submit/actions";
 import { CATEGORIES } from "@/lib/categories";
 
 const inputClass =
-  "rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-[14.5px] text-[var(--ink)] outline-none transition-shadow focus:shadow-[0_0_0_3px_var(--accent-soft)]";
+  "rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-[14.5px] text-[var(--ink)] outline-none transition-shadow focus:shadow-[0_0_0_3px_var(--accent-shadow)]";
 
 export function SubmitForm() {
   const [state, formAction, pending] = useActionState(
