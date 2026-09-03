@@ -34,7 +34,7 @@ export function LeaderboardRow({ entry }: { entry: LeaderboardEntry }) {
           className="rounded-full px-2.5 py-1 text-[11px] font-medium whitespace-nowrap"
           style={{ background: "var(--accent-soft)", color: "var(--accent-deep)" }}
         >
-          Bid $1
+          Bid →
         </span>
       </div>
 

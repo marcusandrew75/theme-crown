@@ -53,7 +53,7 @@ export async function submitTemplate(
       thumbnailUrl: thumbnailUrl || null,
     });
     if ("error" in result) return { error: result.error };
-    redirect(`/t/${result.slug}`);
+    redirect(`/t/${result.slug}?listed=success`);
   }
 
   const supabase = await createClient();
@@ -93,7 +93,7 @@ export async function submitTemplate(
       .single();
 
     if (!insertError && inserted) {
-      redirect(`/t/${inserted.slug}`);
+      redirect(`/t/${inserted.slug}?listed=success`);
     }
 
     // Unique-violation on the slug — try again with a short random suffix.

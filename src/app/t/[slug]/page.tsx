@@ -22,6 +22,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
   const { slug } = await props.params;
   const searchParams = await props.searchParams;
   const bidResult = searchParams?.bid;
+  const justListed = searchParams?.listed === "success";
 
   const found = await getTemplateBySlug(slug);
   if (!found) notFound();
@@ -85,6 +86,18 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
         </div>
       </div>
 
+      {justListed && (
+        <div
+          className="mt-8 rounded-2xl p-4"
+          style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
+        >
+          <p className="text-[14px] leading-relaxed" style={{ color: "var(--accent-deep)" }}>
+            🎉 {entry.title} is live in {category?.name} — currently #
+            {entry.rank} with $0 bid this round. Place the first bid below to
+            start climbing.
+          </p>
+        </div>
+      )}
       {bidResult === "success" && (
         <div
           className="mt-8 rounded-2xl p-4"

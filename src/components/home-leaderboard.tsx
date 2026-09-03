@@ -102,7 +102,7 @@ export function HomeLeaderboard({ boards }: { boards: Board[] }) {
                 className="rounded-full px-3.5 py-1.5 text-[12.5px] font-medium"
                 style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
               >
-                Bid $1
+                Bid →
               </span>
             </div>
           </Link>
