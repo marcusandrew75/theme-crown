@@ -69,13 +69,16 @@
     --line-strong: rgba(255, 255, 255, 0.14);
     --accent: #ff4fa0;
     --accent-deep: #ff8cc6;
-    --accent-soft: #3a1428;
+    /* A muted dark rosewood, not a saturated maroon — close in lightness
+       to --surface-raised so the #1 spotlight card reads as an elevated
+       surface with a warm tint, not a loud colored block. */
+    --accent-soft: #33212a;
     --accent-ink: #1a0a14;
     --accent-shadow: rgba(255, 79, 160, 0.28);
     --secondary: #d99a7a;
     --secondary-soft: #3a2418;
 
-    --tile-1-bg: #3a1428;
+    --tile-1-bg: #33212a;
     --tile-1-ink: #ff8cc6;
     --tile-2-bg: #3a2418;
     --tile-2-ink: #d99a7a;
@@ -89,8 +92,10 @@
     --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.3);
     --shadow-lg:
       0 8px 20px rgba(0, 0, 0, 0.4), 0 24px 56px rgba(0, 0, 0, 0.45);
+    /* Much softer than light mode's — a saturated pink glow this strong
+       reads as harsh against a dark background instead of premium. */
     --shadow-accent:
-      0 8px 24px rgba(255, 79, 160, 0.25), 0 2px 8px rgba(255, 79, 160, 0.18);
+      0 8px 20px rgba(255, 79, 160, 0.14), 0 2px 6px rgba(255, 79, 160, 0.1);
   }
 }
 
