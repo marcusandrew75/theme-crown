@@ -115,7 +115,7 @@ export async function addSandboxTemplate(input: {
   categorySlug: string;
   url: string;
   thumbnailUrl: string | null;
-}): Promise<{ slug: string } | { error: string }> {
+}): Promise<{ slug: string; renamed: boolean } | { error: string }> {
   const persona = await getActivePersona();
   if (!persona) return { error: "Pick a dummy user first." };
   if (!categoryBySlug(input.categorySlug)) return { error: "Choose a category." };
@@ -147,7 +147,7 @@ export async function addSandboxTemplate(input: {
   };
 
   await saveSandboxState({ ...state, templates: [...state.templates, template] });
-  return { slug };
+  return { slug, renamed: slug !== base };
 }
 
 export async function addSandboxBid(

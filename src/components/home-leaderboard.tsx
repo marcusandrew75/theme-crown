@@ -23,25 +23,33 @@ export function HomeLeaderboard({ boards }: { boards: Board[] }) {
 
   return (
     <section className="mx-auto max-w-[1160px] px-4 pb-16 sm:px-6 sm:pb-24">
-      <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1">
-        {boards.map(({ category }) => {
-          const isActive = category.slug === active.category.slug;
-          return (
-            <button
-              key={category.slug}
-              type="button"
-              onClick={() => setActiveSlug(category.slug)}
-              className="shrink-0 rounded-full px-4 py-2 text-[13.5px] font-medium whitespace-nowrap transition-colors"
-              style={
-                isActive
-                  ? { background: "var(--accent)", color: "var(--accent-ink)" }
-                  : { background: "var(--surface)", color: "var(--ink-soft)" }
-              }
-            >
-              {category.name}
-            </button>
-          );
-        })}
+      <div className="relative">
+        <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1">
+          {boards.map(({ category }) => {
+            const isActive = category.slug === active.category.slug;
+            return (
+              <button
+                key={category.slug}
+                type="button"
+                onClick={() => setActiveSlug(category.slug)}
+                className="shrink-0 rounded-full px-4 py-2 text-[13.5px] font-medium whitespace-nowrap transition-colors"
+                style={
+                  isActive
+                    ? { background: "var(--accent)", color: "var(--accent-ink)" }
+                    : { background: "var(--surface)", color: "var(--ink-soft)" }
+                }
+              >
+                {category.name}
+              </button>
+            );
+          })}
+        </div>
+        {/* Hints that the pill row scrolls further — sm:hidden because the
+            row never overflows once there's room for all 5 pills. */}
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[var(--bg)] to-transparent sm:hidden"
+          aria-hidden
+        />
       </div>
 
       <div className="mt-6 flex flex-wrap items-baseline justify-between gap-2">

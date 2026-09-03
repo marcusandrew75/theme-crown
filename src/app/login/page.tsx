@@ -44,7 +44,7 @@ export default async function LoginPage(props: PageProps<"/login">) {
         {configured ? (
           <LoginForm next={next} />
         ) : (
-          <PersonaPicker next={next} />
+          <PersonaPicker next={next} activePersonaId={activePersona?.id ?? null} />
         )}
       </div>
     </main>

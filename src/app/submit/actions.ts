@@ -53,7 +53,8 @@ export async function submitTemplate(
       thumbnailUrl: thumbnailUrl || null,
     });
     if ("error" in result) return { error: result.error };
-    redirect(`/t/${result.slug}?listed=success`);
+    const renamedParam = result.renamed ? "&renamed=1" : "";
+    redirect(`/t/${result.slug}?listed=success${renamedParam}`);
   }
 
   const supabase = await createClient();
@@ -93,7 +94,8 @@ export async function submitTemplate(
       .single();
 
     if (!insertError && inserted) {
-      redirect(`/t/${inserted.slug}?listed=success`);
+      const renamedParam = inserted.slug !== baseSlug ? "&renamed=1" : "";
+      redirect(`/t/${inserted.slug}?listed=success${renamedParam}`);
     }
 
     // Unique-violation on the slug — try again with a short random suffix.

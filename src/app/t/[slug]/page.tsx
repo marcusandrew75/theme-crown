@@ -23,6 +23,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
   const searchParams = await props.searchParams;
   const bidResult = searchParams?.bid;
   const justListed = searchParams?.listed === "success";
+  const wasRenamed = searchParams?.renamed === "1";
 
   const found = await getTemplateBySlug(slug);
   if (!found) notFound();
@@ -58,6 +59,9 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
           <p className="mt-0.5 text-[14px] text-[var(--ink-faint)]">
             {entry.authorHandle}
           </p>
+          <p className="mono mt-0.5 text-[12px] text-[var(--ink-faint)]">
+            /t/{slug}
+          </p>
         </div>
       </div>
 
@@ -92,9 +96,11 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
           style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
         >
           <p className="text-[14px] leading-relaxed" style={{ color: "var(--accent-deep)" }}>
-            🎉 {entry.title} is live in {category?.name} — currently #
-            {entry.rank} with $0 bid this round. Place the first bid below to
-            start climbing.
+            🎉 {entry.title} is live in {category?.name} at /t/{slug}
+            {wasRenamed &&
+              " — another listing already used that title, so we added a suffix to your URL"}
+            . Currently #{entry.rank} with $0 bid this round — place the
+            first bid below to start climbing.
           </p>
         </div>
       )}
