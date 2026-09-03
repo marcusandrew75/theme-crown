@@ -76,7 +76,7 @@ export function HomeLeaderboard({ boards }: { boards: Board[] }) {
             <TemplateTile
               title={topEntry.title}
               thumbnailUrl={topEntry.thumbnailUrl}
-              className="h-32 w-32 shrink-0 text-[40px] sm:h-44 sm:w-44 sm:text-[52px]"
+              className="h-32 w-52 shrink-0 text-[40px] sm:h-44 sm:w-72 sm:text-[52px]"
             />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">

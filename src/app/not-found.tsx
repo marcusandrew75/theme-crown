@@ -4,10 +4,10 @@ import { CATEGORIES } from "@/lib/categories";
 export default function NotFound() {
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-[560px] flex-col justify-center px-4 py-14 sm:px-6">
-      <p className="mono text-[12px] font-medium tracking-[0.08em] text-[var(--accent-deep)] uppercase">
+      <p className="mono mb-2 text-[12px] font-medium tracking-[0.08em] text-[var(--accent-deep)] uppercase">
         404
       </p>
-      <h1 className="mt-2 text-[1.9rem] font-semibold sm:text-[2.2rem]">
+      <h1 className="text-[1.9rem] font-semibold sm:text-[2.2rem]">
         This page doesn&apos;t exist.
       </h1>
       <p className="mt-2 max-w-[46ch] text-[14.5px] leading-relaxed text-[var(--ink-soft)]">

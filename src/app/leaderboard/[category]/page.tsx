@@ -31,10 +31,10 @@ export default async function LeaderboardPage(
 
   return (
     <main className="mx-auto max-w-[1160px] px-4 py-10 sm:px-6 sm:py-14">
-      <p className="mono text-[11.5px] font-medium tracking-[0.08em] text-[var(--ink-faint)] uppercase">
+      <p className="mono mb-1.5 text-[11.5px] font-medium tracking-[0.08em] text-[var(--ink-faint)] uppercase">
         {category.tagline}
       </p>
-      <h1 className="mt-1.5 text-[1.9rem] font-semibold sm:text-[2.2rem]">
+      <h1 className="text-[1.9rem] font-semibold sm:text-[2.2rem]">
         {category.name}
       </h1>
 
@@ -56,7 +56,7 @@ export default async function LeaderboardPage(
             <TemplateTile
               title={topEntry.title}
               thumbnailUrl={topEntry.thumbnailUrl}
-              className="h-28 w-28 shrink-0 text-[38px] sm:h-40 sm:w-40 sm:text-[48px]"
+              className="h-28 w-44 shrink-0 text-[38px] sm:h-40 sm:w-64 sm:text-[48px]"
             />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">

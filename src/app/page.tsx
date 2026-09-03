@@ -18,18 +18,19 @@ export default async function HomePage() {
       {/* ---------- hero copy ---------- */}
       <section className="mx-auto max-w-[1160px] px-4 pt-12 pb-6 sm:px-6 sm:pt-16 sm:pb-8">
         <span
-          className="mono inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11.5px] font-medium tracking-[0.06em] text-[var(--accent-deep)] uppercase shadow-[var(--shadow-sm)]"
+          className="mono mb-8 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11.5px] font-medium tracking-[0.06em] text-[var(--accent-deep)] uppercase shadow-[var(--shadow-sm)] sm:mb-9"
           style={{ background: "var(--surface-raised)" }}
         >
           <CrownMark className="h-3.5 w-3.5" />
           For Framer template authors
         </span>
-        <h1 className="mt-8 max-w-[30ch] text-[2.2rem] leading-[1.08] font-semibold tracking-tight sm:mt-9 sm:text-[2.8rem]">
-          A fairer way to get your template discovered.
+        <h1 className="max-w-[21ch] text-[2.2rem] leading-[1.08] font-semibold tracking-tight sm:text-[2.8rem]">
+          A fairer way to get your Framer template discovered.
         </h1>
         <p className="mt-4 max-w-[58ch] text-[16.5px] leading-relaxed text-[var(--ink-soft)]">
-          Bid $1 or more to rank your template — small bids get a real shot,
-          not just the biggest budgets.
+          Bid $1 or more to rank your template —
+          <br />
+          small bids get a real shot, not just the biggest budgets.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2">
           <Link

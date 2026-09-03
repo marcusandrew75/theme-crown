@@ -112,20 +112,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* @layer base (not a bare rule): Tailwind utilities live in @layer
-   utilities, and an unlayered rule always beats a layered one regardless
-   of specificity — without this, `margin: 0` here would permanently win
-   over every mt-*/mb-* applied directly to an h1/h2/h3, no matter what
-   the class says. */
-@layer base {
-  h1,
-  h2,
-  h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    text-wrap: balance;
-    margin: 0;
-  }
+/* Unlayered on purpose: an unlayered rule always beats anything in
+   @layer utilities regardless of specificity, so margin: 0 here is
+   final — no margin-top or margin-bottom utility on an h1/h2/h3 can
+   override it (tried @layer base and a zero-specificity :where()
+   wrapper; the former got compiled to a broken selector that dropped
+   font-family too, the latter still lost to the layer, not the
+   specificity, since layer order outranks specificity in the
+   cascade). Put spacing on a sibling instead, never on the heading. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-wrap: balance;
+  margin: 0;
 }
 
 code,

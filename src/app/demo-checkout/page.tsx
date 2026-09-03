@@ -34,10 +34,10 @@ export default async function DemoCheckoutPage(
       </div>
 
       <div className="rounded-3xl bg-[var(--surface)] p-6 shadow-[var(--shadow-md)]">
-        <p className="text-[12.5px] font-medium tracking-[0.06em] text-[var(--ink-faint)] uppercase">
+        <p className="mb-1 text-[12.5px] font-medium tracking-[0.06em] text-[var(--ink-faint)] uppercase">
           Bid on
         </p>
-        <h1 className="mt-1 text-[1.4rem] font-semibold">{found.entry.title}</h1>
+        <h1 className="text-[1.4rem] font-semibold">{found.entry.title}</h1>
 
         <div className="mt-6 flex items-baseline justify-between rounded-xl bg-[var(--surface-sunken)] px-4 py-3">
           <span className="text-[14px] text-[var(--ink-soft)]">Amount</span>
