@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FoxMascot } from "./fox-mascot";
+import { CrownLogomark } from "./crown-logomark";
 import { MobileMenu } from "./mobile-menu";
 import { SignOutButton } from "./sign-out-button";
 import { CATEGORIES } from "@/lib/categories";
@@ -46,7 +46,7 @@ export async function SiteHeader() {
           href="/"
           className="flex shrink-0 items-center gap-2 font-[family-name:var(--font-display)] text-[17px] font-semibold tracking-tight"
         >
-          <FoxMascot className="h-7 w-7" />
+          <CrownLogomark className="h-7 w-7" />
           ThemeCrown
         </Link>
 

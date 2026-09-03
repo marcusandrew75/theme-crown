@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CrownMark } from "@/components/crown-mark";
-import { FoxMascot } from "@/components/fox-mascot";
+import { CrownLogomark } from "@/components/crown-logomark";
 import { LeaderboardRow, formatDollars } from "@/components/leaderboard-row";
 import { TemplateTile } from "@/components/template-tile";
 import { CATEGORIES } from "@/lib/categories";
@@ -182,7 +182,7 @@ export default async function HomePage() {
       {/* ---------- footer ---------- */}
       <footer className="bg-[var(--surface-sunken)]">
         <div className="mx-auto flex max-w-[1160px] items-center gap-2 px-4 py-8 text-[13px] text-[var(--ink-faint)] sm:px-6">
-          <FoxMascot className="h-5 w-5" />
+          <CrownLogomark className="h-5 w-5" />
           ThemeCrown
         </div>
       </footer>
