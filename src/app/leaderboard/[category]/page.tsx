@@ -30,7 +30,7 @@ export default async function LeaderboardPage(
   const [topEntry, ...restEntries] = entries;
 
   return (
-    <main className="mx-auto max-w-[720px] px-4 py-10 sm:px-6 sm:py-14">
+    <main className="mx-auto max-w-[1160px] px-4 py-10 sm:px-6 sm:py-14">
       <p className="mono text-[11.5px] font-medium tracking-[0.08em] text-[var(--ink-faint)] uppercase">
         {category.tagline}
       </p>
