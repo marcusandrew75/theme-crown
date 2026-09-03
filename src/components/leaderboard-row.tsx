@@ -13,7 +13,7 @@ export function LeaderboardRow({ entry }: { entry: LeaderboardEntry }) {
   return (
     <Link
       href={`/t/${entry.slug}`}
-      className="flex items-center gap-3 rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-3 transition-colors hover:border-[var(--line-strong)]"
+      className="flex items-center gap-3 rounded-2xl bg-[var(--surface)] p-3 shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-md)]"
     >
       <RankBadge rank={entry.rank} />
 
@@ -31,7 +31,7 @@ export function LeaderboardRow({ entry }: { entry: LeaderboardEntry }) {
           {formatDollars(entry.totalBidCents)}
         </span>
         <span
-          className="rounded-[3px] px-2 py-1 text-[11px] font-medium whitespace-nowrap"
+          className="rounded-full px-2.5 py-1 text-[11px] font-medium whitespace-nowrap"
           style={{ background: "var(--accent-soft)", color: "var(--accent-deep)" }}
         >
           Bid $1

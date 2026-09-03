@@ -58,7 +58,7 @@ export function MobileMenu({
             className="fixed inset-0 z-10 cursor-default"
           />
           <div
-            className="absolute right-0 top-full z-20 mt-2 w-60 rounded-[3px] border border-[var(--line)] bg-[var(--bg)] p-2 shadow-lg"
+            className="absolute top-full right-0 z-20 mt-2 w-60 rounded-2xl bg-[var(--surface-raised)] p-2 shadow-[var(--shadow-lg)]"
             onClick={() => setOpen(false)}
           >
             <div className="flex flex-col">
@@ -66,20 +66,20 @@ export function MobileMenu({
                 <Link
                   key={category.slug}
                   href={`/leaderboard/${category.slug}`}
-                  className="rounded-[3px] px-3 py-2 text-[14px] font-medium text-[var(--ink-soft)] hover:bg-[var(--surface)] hover:text-[var(--ink)]"
+                  className="rounded-xl px-3 py-2 text-[14px] font-medium text-[var(--ink-soft)] hover:bg-[var(--surface-sunken)] hover:text-[var(--ink)]"
                 >
                   {category.name}
                 </Link>
               ))}
             </div>
-            <div className="my-2 border-t border-[var(--line)]" />
+            <div className="my-2 h-px bg-[var(--surface-sunken)]" />
             <Link
               href="/submit"
-              className="block rounded-[3px] px-3 py-2 text-[14px] font-medium text-[var(--ink)] hover:bg-[var(--surface)]"
+              className="block rounded-xl px-3 py-2 text-[14px] font-medium text-[var(--ink)] hover:bg-[var(--surface-sunken)]"
             >
               Submit
             </Link>
-            <div className="rounded-[3px] px-3 py-2 text-[14px]">{authSlot}</div>
+            <div className="rounded-xl px-3 py-2 text-[14px]">{authSlot}</div>
           </div>
         </>
       )}

@@ -6,16 +6,19 @@ export function RankBadge({ rank }: { rank: number }) {
 
   return (
     <div
-      className="mono flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] text-[16px] font-medium tabular"
+      className="mono flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[16px] font-medium tabular"
       style={
         isFirst
-          ? { background: "var(--accent)", color: "var(--accent-ink)" }
+          ? {
+              background: "var(--accent)",
+              color: "var(--accent-ink)",
+              boxShadow: "var(--shadow-accent)",
+            }
           : isPodium
             ? { background: "var(--accent-soft)", color: "var(--accent-deep)" }
             : {
-                background: "var(--surface)",
+                background: "var(--surface-sunken)",
                 color: "var(--ink-soft)",
-                border: "1px solid var(--line)",
               }
       }
       aria-label={`Rank ${rank}`}

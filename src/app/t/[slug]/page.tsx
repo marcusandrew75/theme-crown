@@ -70,8 +70,8 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
 
       {bidResult === "success" && (
         <div
-          className="mt-8 rounded-[3px] border p-4"
-          style={{ borderColor: "var(--accent)", background: "var(--accent-soft)" }}
+          className="mt-8 rounded-2xl p-4"
+          style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
         >
           <p className="text-[14px] leading-relaxed" style={{ color: "var(--accent-deep)" }}>
             {configured
@@ -81,14 +81,14 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
         </div>
       )}
       {bidResult === "cancelled" && (
-        <div className="mt-8 rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-4">
+        <div className="mt-8 rounded-2xl bg-[var(--surface)] p-4 shadow-[var(--shadow-xs)]">
           <p className="text-[14px] leading-relaxed text-[var(--ink-soft)]">
             Checkout was cancelled — no charge was made.
           </p>
         </div>
       )}
 
-      <div className="mt-8 rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-4">
+      <div className="mt-8 rounded-2xl bg-[var(--surface)] p-4 shadow-[var(--shadow-xs)]">
         {!configured ? (
           persona ? (
             <BidForm slug={slug} />
@@ -99,7 +99,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
               </p>
               <Link
                 href={`/login?next=/t/${slug}`}
-                className="mt-4 inline-block rounded-[3px] px-5 py-3 text-[14.5px] font-medium"
+                className="mt-4 inline-block rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)]"
                 style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
               >
                 Choose a dummy user
@@ -119,7 +119,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
             </p>
             <Link
               href={`/login?next=/t/${slug}`}
-              className="mt-4 inline-block rounded-[3px] px-5 py-3 text-[14.5px] font-medium"
+              className="mt-4 inline-block rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)]"
               style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
             >
               Sign in

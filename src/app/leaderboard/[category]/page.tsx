@@ -50,8 +50,8 @@ export default async function LeaderboardPage(
         <>
           <Link
             href={`/t/${topEntry.slug}`}
-            className="mt-8 flex flex-col items-start gap-5 rounded-[4px] border p-5 transition-opacity hover:opacity-90 sm:flex-row sm:items-center sm:p-7"
-            style={{ borderColor: "var(--accent)", background: "var(--accent-soft)" }}
+            className="mt-8 flex flex-col items-start gap-5 rounded-3xl p-5 transition-transform hover:-translate-y-px sm:flex-row sm:items-center sm:p-7"
+            style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
           >
             <TemplateTile
               title={topEntry.title}
@@ -83,7 +83,7 @@ export default async function LeaderboardPage(
                 {formatDollars(topEntry.totalBidCents)}
               </span>
               <span
-                className="rounded-[3px] px-3 py-1.5 text-[12.5px] font-medium"
+                className="rounded-full px-3.5 py-1.5 text-[12.5px] font-medium"
                 style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
               >
                 Bid $1

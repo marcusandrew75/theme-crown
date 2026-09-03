@@ -23,26 +23,26 @@ export default async function SubmitPage() {
 
       <div className="mt-8">
         {configured && !user ? (
-          <div className="rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-5">
+          <div className="rounded-2xl bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)]">
             <p className="text-[14.5px] leading-relaxed text-[var(--ink-soft)]">
               Sign in first so we know who to credit as the author.
             </p>
             <Link
               href="/login?next=/submit"
-              className="mt-4 inline-block rounded-[3px] px-5 py-3 text-[14.5px] font-medium"
+              className="mt-4 inline-block rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)]"
               style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
             >
               Sign in
             </Link>
           </div>
         ) : !configured && !persona ? (
-          <div className="rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-5">
+          <div className="rounded-2xl bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)]">
             <p className="text-[14.5px] leading-relaxed text-[var(--ink-soft)]">
               Pick a dummy user to try the submit flow in sandbox mode.
             </p>
             <Link
               href="/login?next=/submit"
-              className="mt-4 inline-block rounded-[3px] px-5 py-3 text-[14.5px] font-medium"
+              className="mt-4 inline-block rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)]"
               style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
             >
               Choose a dummy user

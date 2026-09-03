@@ -27,19 +27,19 @@ export default async function DemoCheckoutPage(
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-[420px] flex-col justify-center px-4 py-10 sm:px-6">
       <div
-        className="mb-4 rounded-[3px] border p-3 text-center text-[13px] font-medium"
-        style={{ borderColor: "var(--secondary)", background: "var(--secondary-soft)", color: "var(--secondary)" }}
+        className="mb-4 rounded-full px-4 py-2.5 text-center text-[13px] font-medium"
+        style={{ background: "var(--secondary-soft)", color: "var(--secondary)" }}
       >
         🧪 Sandbox checkout — this simulates Stripe. No real payment happens.
       </div>
 
-      <div className="rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-6">
+      <div className="rounded-3xl bg-[var(--surface)] p-6 shadow-[var(--shadow-md)]">
         <p className="text-[12.5px] font-medium tracking-[0.06em] text-[var(--ink-faint)] uppercase">
           Bid on
         </p>
         <h1 className="mt-1 text-[1.4rem] font-semibold">{found.entry.title}</h1>
 
-        <div className="mt-6 flex items-baseline justify-between border-t border-[var(--line)] pt-4">
+        <div className="mt-6 flex items-baseline justify-between rounded-xl bg-[var(--surface-sunken)] px-4 py-3">
           <span className="text-[14px] text-[var(--ink-soft)]">Amount</span>
           <span className="mono tabular text-[1.3rem] font-semibold">
             {formatDollars(amountCents)}
@@ -51,7 +51,7 @@ export default async function DemoCheckoutPage(
           <input type="hidden" name="amount_cents" value={amountCents} />
           <button
             type="submit"
-            className="w-full rounded-[3px] py-3 text-[14.5px] font-medium"
+            className="w-full rounded-full py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)]"
             style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
           >
             Simulate successful payment

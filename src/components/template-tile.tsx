@@ -29,7 +29,7 @@ export function TemplateTile({
       <img
         src={thumbnailUrl}
         alt=""
-        className={`shrink-0 rounded-[3px] border border-[var(--line-strong)] object-cover ${sizeClasses}`}
+        className={`shrink-0 rounded-xl object-cover shadow-[var(--shadow-xs)] ${sizeClasses}`}
       />
     );
   }
@@ -38,11 +38,11 @@ export function TemplateTile({
 
   return (
     <div
-      // One of the 4 hashed tile colors happens to equal the accent-soft
-      // background used behind the leaderboard's #1 spotlight card — without
-      // a border, that specific tile turns invisible (just a floating
-      // letter) whenever a title hashes to it.
-      className={`flex shrink-0 items-center justify-center rounded-[3px] border border-[var(--line-strong)] font-[family-name:var(--font-display)] font-semibold ${sizeClasses}`}
+      // shadow-sm (not -xs): tile-1's bg deliberately mirrors accent-soft
+      // for the #1 spotlight card, so this needs a shadow with real spread
+      // to stay legible when it lands on that identical background —
+      // there's no border to fall back on now.
+      className={`flex shrink-0 items-center justify-center rounded-xl font-[family-name:var(--font-display)] font-semibold shadow-[var(--shadow-sm)] ${sizeClasses}`}
       style={{
         background: `var(--tile-${i}-bg)`,
         color: `var(--tile-${i}-ink)`,

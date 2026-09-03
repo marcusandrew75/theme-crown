@@ -11,7 +11,7 @@ export function LoginForm({ next }: { next: string }) {
 
   if (state?.sent) {
     return (
-      <div className="rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-5">
+      <div className="rounded-2xl bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)]">
         <p className="text-[14.5px] leading-relaxed text-[var(--ink-soft)]">
           Check your email — we sent a sign-in link. It expires shortly, so
           use it soon.
@@ -32,13 +32,13 @@ export function LoginForm({ next }: { next: string }) {
           name="email"
           required
           placeholder="you@example.com"
-          className="rounded-[3px] border border-[var(--line-strong)] bg-[var(--surface)] px-3 py-2.5 text-[14.5px] text-[var(--ink)] outline-none focus:border-[var(--accent)]"
+          className="rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-[14.5px] text-[var(--ink)] outline-none transition-shadow focus:shadow-[0_0_0_3px_var(--accent-soft)]"
         />
       </label>
 
       {state?.error && (
         <p
-          className="rounded-[3px] px-3 py-2 text-[13.5px]"
+          className="rounded-xl px-3.5 py-2.5 text-[13.5px]"
           style={{ background: "var(--secondary-soft)", color: "var(--secondary)" }}
         >
           {state.error}
@@ -48,7 +48,7 @@ export function LoginForm({ next }: { next: string }) {
       <button
         type="submit"
         disabled={pending}
-        className="mt-1 rounded-[3px] px-5 py-3 text-[14.5px] font-medium disabled:opacity-60"
+        className="mt-1 rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)] disabled:opacity-60"
         style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
       >
         {pending ? "Sending…" : "Send sign-in link"}

@@ -42,18 +42,17 @@ export function BidForm({ slug }: { slug: string }) {
                 setSelected(cents);
                 setCustom("");
               }}
-              className="rounded-[3px] border px-4 py-2 text-[14px] font-medium"
+              className="rounded-full px-4 py-2 text-[14px] font-medium transition-shadow"
               style={
                 active
                   ? {
                       background: "var(--accent)",
                       color: "var(--accent-ink)",
-                      borderColor: "var(--accent)",
+                      boxShadow: "var(--shadow-accent)",
                     }
                   : {
-                      borderColor: "var(--line-strong)",
                       color: "var(--ink)",
-                      background: "var(--surface)",
+                      background: "var(--surface-sunken)",
                     }
               }
             >
@@ -61,7 +60,7 @@ export function BidForm({ slug }: { slug: string }) {
             </button>
           );
         })}
-        <label className="flex items-center gap-1 rounded-[3px] border border-[var(--line-strong)] bg-[var(--surface)] px-3 py-2">
+        <label className="flex items-center gap-1 rounded-full bg-[var(--surface-sunken)] px-3.5 py-2 transition-shadow focus-within:shadow-[0_0_0_3px_var(--accent-soft)]">
           <span className="text-[14px] text-[var(--ink-faint)]">$</span>
           <input
             type="number"
@@ -77,7 +76,7 @@ export function BidForm({ slug }: { slug: string }) {
 
       {state?.error && (
         <p
-          className="rounded-[3px] px-3 py-2 text-[13.5px]"
+          className="rounded-xl px-3.5 py-2.5 text-[13.5px]"
           style={{ background: "var(--secondary-soft)", color: "var(--secondary)" }}
         >
           {state.error}
@@ -87,7 +86,7 @@ export function BidForm({ slug }: { slug: string }) {
       <button
         type="submit"
         disabled={pending || !isValid}
-        className="w-full rounded-[3px] py-3 text-[14.5px] font-medium disabled:opacity-60"
+        className="w-full rounded-full py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)] disabled:opacity-60"
         style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
       >
         {pending

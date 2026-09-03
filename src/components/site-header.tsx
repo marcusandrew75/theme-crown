@@ -40,7 +40,7 @@ export async function SiteHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-10 border-b border-[var(--line)] bg-[var(--bg)]/90 backdrop-blur">
+    <header className="sticky top-0 z-10 bg-[var(--bg)]/90 shadow-[var(--shadow-xs)] backdrop-blur">
       <div className="mx-auto flex max-w-[1160px] items-center gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
@@ -58,7 +58,7 @@ export async function SiteHeader() {
             <Link
               key={category.slug}
               href={`/leaderboard/${category.slug}`}
-              className="shrink-0 whitespace-nowrap rounded-[3px] border border-transparent px-3 py-2 text-[13.5px] font-medium text-[var(--ink-soft)] transition-colors hover:border-[var(--line-strong)] hover:text-[var(--ink)]"
+              className="shrink-0 rounded-full px-3 py-2 text-[13.5px] font-medium whitespace-nowrap text-[var(--ink-soft)] transition-colors hover:bg-[var(--surface-sunken)] hover:text-[var(--ink)]"
             >
               {category.name}
             </Link>

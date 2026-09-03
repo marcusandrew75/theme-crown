@@ -13,21 +13,25 @@ export default async function HomePage() {
   return (
     <main>
       {/* ---------- hero copy ---------- */}
-      <section className="mx-auto max-w-[1160px] px-4 pt-10 pb-6 sm:px-6 sm:pt-14 sm:pb-8">
-        <p className="mono mb-4 text-[12px] font-medium tracking-[0.1em] text-[var(--accent-deep)] uppercase">
+      <section className="mx-auto max-w-[1160px] px-4 pt-12 pb-6 sm:px-6 sm:pt-16 sm:pb-8">
+        <span
+          className="mono inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11.5px] font-medium tracking-[0.06em] text-[var(--accent-deep)] uppercase shadow-[var(--shadow-sm)]"
+          style={{ background: "var(--surface-raised)" }}
+        >
+          <CrownMark className="h-3.5 w-3.5" />
           For Framer template authors
-        </p>
-        <h1 className="max-w-[30ch] text-[2.1rem] leading-[1.08] font-semibold tracking-tight sm:text-[2.6rem]">
+        </span>
+        <h1 className="mt-5 max-w-[30ch] text-[2.2rem] leading-[1.08] font-semibold tracking-tight sm:text-[2.8rem]">
           A fairer way to get your template discovered.
         </h1>
         <p className="mt-4 max-w-[58ch] text-[16.5px] leading-relaxed text-[var(--ink-soft)]">
           Bid $1 or more to rank your template — small bids get a real shot,
           not just the biggest budgets.
         </p>
-        <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2">
           <Link
             href="/submit"
-            className="rounded-[3px] px-5 py-3 text-[14.5px] font-medium"
+            className="rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)] transition-transform hover:-translate-y-px"
             style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
           >
             Submit your template
@@ -55,8 +59,8 @@ export default async function HomePage() {
 
           <Link
             href={`/t/${topEntry.slug}`}
-            className="mt-5 flex flex-col items-start gap-5 rounded-[4px] border p-5 transition-opacity hover:opacity-90 sm:flex-row sm:items-center sm:p-7"
-            style={{ borderColor: "var(--accent)", background: "var(--accent-soft)" }}
+            className="mt-5 flex flex-col items-start gap-5 rounded-3xl p-5 transition-transform hover:-translate-y-px sm:flex-row sm:items-center sm:p-7"
+            style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
           >
             <TemplateTile
               title={topEntry.title}
@@ -88,7 +92,7 @@ export default async function HomePage() {
                 {formatDollars(topEntry.totalBidCents)}
               </span>
               <span
-                className="rounded-[3px] px-3 py-1.5 text-[12.5px] font-medium"
+                className="rounded-full px-3.5 py-1.5 text-[12.5px] font-medium"
                 style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
               >
                 Bid $1
@@ -113,15 +117,12 @@ export default async function HomePage() {
       )}
 
       {/* ---------- how it works ---------- */}
-      <section
-        id="how-it-works"
-        className="border-t border-[var(--line)] bg-[var(--surface)]"
-      >
-        <div className="mx-auto max-w-[1160px] px-4 py-8 sm:px-6 sm:py-10">
+      <section id="how-it-works" className="bg-[var(--surface-sunken)]">
+        <div className="mx-auto max-w-[1160px] px-4 py-10 sm:px-6 sm:py-14">
           <h2 className="mono text-[11.5px] font-medium tracking-[0.08em] text-[var(--ink-faint)] uppercase">
             How it works
           </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3 sm:gap-6">
+          <div className="mt-5 grid gap-3 sm:grid-cols-3 sm:gap-5">
             {[
               {
                 title: "Submit once",
@@ -136,11 +137,14 @@ export default async function HomePage() {
                 body: "Every Monday 00:00 UTC, every board resets to zero — a fresh shot at #1.",
               },
             ].map((step) => (
-              <div key={step.title}>
-                <h3 className="text-[14.5px] font-semibold text-[var(--ink)]">
+              <div
+                key={step.title}
+                className="rounded-2xl bg-[var(--surface-raised)] p-5 shadow-[var(--shadow-xs)]"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-[15px] font-semibold text-[var(--ink)]">
                   {step.title}
                 </h3>
-                <p className="mt-1 text-[13.5px] leading-relaxed text-[var(--ink-soft)]">
+                <p className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--ink-soft)]">
                   {step.body}
                 </p>
               </div>
@@ -159,7 +163,7 @@ export default async function HomePage() {
             <Link
               key={category.slug}
               href={`/leaderboard/${category.slug}`}
-              className="flex items-center justify-between rounded-[3px] border border-[var(--line)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--line-strong)]"
+              className="flex items-center justify-between rounded-2xl bg-[var(--surface)] p-4 shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-md)]"
             >
               <div>
                 <div className="font-[family-name:var(--font-display)] text-[15.5px] font-semibold">
@@ -176,7 +180,7 @@ export default async function HomePage() {
       </section>
 
       {/* ---------- footer ---------- */}
-      <footer className="border-t border-[var(--line)]">
+      <footer className="bg-[var(--surface-sunken)]">
         <div className="mx-auto flex max-w-[1160px] items-center gap-2 px-4 py-8 text-[13px] text-[var(--ink-faint)] sm:px-6">
           <FoxMascot className="h-5 w-5" />
           ThemeCrown

@@ -5,7 +5,7 @@ import { submitTemplate } from "@/app/submit/actions";
 import { CATEGORIES } from "@/lib/categories";
 
 const inputClass =
-  "rounded-[3px] border border-[var(--line-strong)] bg-[var(--surface)] px-3 py-2.5 text-[14.5px] text-[var(--ink)] outline-none focus:border-[var(--accent)]";
+  "rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-[14.5px] text-[var(--ink)] outline-none transition-shadow focus:shadow-[0_0_0_3px_var(--accent-soft)]";
 
 export function SubmitForm() {
   const [state, formAction, pending] = useActionState(
@@ -84,7 +84,7 @@ export function SubmitForm() {
 
       {state?.error && (
         <p
-          className="rounded-[3px] px-3 py-2 text-[13.5px]"
+          className="rounded-xl px-3.5 py-2.5 text-[13.5px]"
           style={{ background: "var(--secondary-soft)", color: "var(--secondary)" }}
         >
           {state.error}
@@ -94,7 +94,7 @@ export function SubmitForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-1 rounded-[3px] px-5 py-3 text-[14.5px] font-medium disabled:opacity-60"
+        className="mt-1 rounded-full px-6 py-3.5 text-[14.5px] font-medium shadow-[var(--shadow-accent)] disabled:opacity-60"
         style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
       >
         {pending ? "Listing…" : "List template"}

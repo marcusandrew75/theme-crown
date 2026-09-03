@@ -11,7 +11,7 @@ export function PersonaPicker({ next }: { next: string }) {
           <input type="hidden" name="next" value={next} />
           <button
             type="submit"
-            className="flex w-full flex-col items-center gap-2 rounded-[3px] border border-[var(--line-strong)] bg-[var(--surface)] p-4 text-center transition-colors hover:border-[var(--accent)]"
+            className="flex w-full flex-col items-center gap-2 rounded-2xl bg-[var(--surface)] p-4 text-center shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-md)]"
           >
             <TemplateTile title={persona.name} className="h-11 w-11 text-[16px]" />
             <span className="text-[14px] font-medium text-[var(--ink)]">
