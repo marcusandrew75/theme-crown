@@ -50,13 +50,13 @@ export default async function LeaderboardPage(
         <>
           <Link
             href={`/t/${topEntry.slug}`}
-            className="mt-8 flex flex-col items-start gap-5 rounded-3xl p-5 transition-transform hover:-translate-y-px sm:flex-row sm:items-center sm:p-7"
+            className="mt-8 flex flex-col items-start gap-6 rounded-3xl p-6 transition-transform hover:-translate-y-px sm:flex-row sm:items-center sm:p-9"
             style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
           >
             <TemplateTile
               title={topEntry.title}
               thumbnailUrl={topEntry.thumbnailUrl}
-              className="h-24 w-24 shrink-0 text-[34px] sm:h-28 sm:w-28 sm:text-[38px]"
+              className="h-28 w-28 shrink-0 text-[38px] sm:h-40 sm:w-40 sm:text-[48px]"
             />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
@@ -68,10 +68,15 @@ export default async function LeaderboardPage(
                   Currently #1
                 </span>
               </div>
-              <div className="mt-1.5 truncate font-[family-name:var(--font-display)] text-[1.6rem] font-semibold sm:text-[1.9rem]">
+              <div className="mt-2 truncate font-[family-name:var(--font-display)] text-[1.8rem] font-semibold sm:text-[2.2rem]">
                 {topEntry.title}
               </div>
-              <div className="mt-1 text-[14px] text-[var(--ink-soft)]">
+              {topEntry.tagline && (
+                <div className="mt-1 truncate text-[14.5px] text-[var(--ink-soft)]">
+                  {topEntry.tagline}
+                </div>
+              )}
+              <div className="mt-1.5 text-[13.5px] text-[var(--ink-faint)]">
                 {topEntry.authorHandle}
               </div>
             </div>

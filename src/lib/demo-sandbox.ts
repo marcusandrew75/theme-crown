@@ -173,6 +173,7 @@ function scoreAndRank(
     authorHandle: string;
     thumbnailUrl: string | null;
     totalBidCents: number;
+    tagline?: string;
   }[],
 ): LeaderboardEntry[] {
   const scored = entries.map((entry) => ({
@@ -201,6 +202,7 @@ export async function getSandboxLeaderboard(
     title: entry.title,
     authorHandle: entry.authorHandle,
     thumbnailUrl: entry.thumbnailUrl ?? null,
+    tagline: entry.tagline,
     totalBidCents: entry.totalBidCents + (bidTotals.get(entry.slug) ?? 0),
   }));
 

@@ -49,7 +49,12 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
         />
         <div>
           <h1 className="text-[1.6rem] font-semibold">{entry.title}</h1>
-          <p className="text-[14px] text-[var(--ink-faint)]">
+          {entry.tagline && (
+            <p className="mt-0.5 text-[14px] text-[var(--ink-soft)]">
+              {entry.tagline}
+            </p>
+          )}
+          <p className="mt-0.5 text-[14px] text-[var(--ink-faint)]">
             {entry.authorHandle}
           </p>
         </div>
