@@ -51,6 +51,13 @@
   --shadow-accent:
     0 8px 24px rgba(224, 17, 120, 0.18), 0 2px 8px rgba(224, 17, 120, 0.12);
 
+  /* The #1 spotlight card's fill + elevation — a pale pink wash with a
+     soft matching glow reads as an elegant warm highlight in light mode.
+     Dark mode redefines both below instead of reusing this as-is; a
+     "pale" pink doesn't really exist on black, it just reads muddy. */
+  --spotlight-bg: var(--accent-soft);
+  --spotlight-shadow: var(--shadow-accent);
+
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
@@ -100,6 +107,14 @@
        reads as harsh against a dark background instead of premium. */
     --shadow-accent:
       0 8px 20px rgba(255, 79, 160, 0.14), 0 2px 6px rgba(255, 79, 160, 0.1);
+
+    /* No pale-pink equivalent exists on black, so the #1 spotlight gets
+       its own dark-mode treatment: a card distinctly lighter than the
+       rows below it (not the same near-invisible grey step used for
+       small badges/tags), with a crisp solid pink ring — not a blurred
+       glow — plus a normal dark elevation shadow for depth. */
+    --spotlight-bg: #363636;
+    --spotlight-shadow: 0 0 0 1.5px var(--accent), var(--shadow-lg);
   }
 }
 

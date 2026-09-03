@@ -51,7 +51,7 @@ export default async function LeaderboardPage(
           <Link
             href={`/t/${topEntry.slug}`}
             className="relative mt-8 flex flex-col items-start gap-6 rounded-3xl p-6 transition-transform hover:-translate-y-px sm:flex-row sm:items-center sm:p-9"
-            style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
+            style={{ background: "var(--spotlight-bg)", boxShadow: "var(--spotlight-shadow)" }}
           >
             <CrownMark className="absolute -top-4 -right-3 z-10 h-12 w-12 rotate-12 text-[var(--accent)] drop-shadow-[0_6px_14px_var(--accent-shadow)] sm:-top-6 sm:-right-5 sm:h-16 sm:w-16" />
             <TemplateTile

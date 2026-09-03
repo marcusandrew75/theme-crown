@@ -93,7 +93,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
       {justListed && (
         <div
           className="mt-8 rounded-2xl p-4"
-          style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
+          style={{ background: "var(--spotlight-bg)", boxShadow: "var(--spotlight-shadow)" }}
         >
           <p className="text-[14px] leading-relaxed" style={{ color: "var(--accent-deep)" }}>
             🎉 {entry.title} is live in {category?.name} at /t/{slug}
@@ -107,7 +107,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
       {bidResult === "success" && (
         <div
           className="mt-8 rounded-2xl p-4"
-          style={{ background: "var(--accent-soft)", boxShadow: "var(--shadow-accent)" }}
+          style={{ background: "var(--spotlight-bg)", boxShadow: "var(--spotlight-shadow)" }}
         >
           <p className="text-[14px] leading-relaxed" style={{ color: "var(--accent-deep)" }}>
             {configured
