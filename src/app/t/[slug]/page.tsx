@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { RankBadge } from "@/components/rank-badge";
 import { TemplateTile } from "@/components/template-tile";
 import { BidForm } from "@/components/bid-form";
+import { OutboundLink } from "@/components/outbound-link";
 import { categoryBySlug } from "@/lib/categories";
 import { getTemplateBySlug } from "@/lib/template";
 import { getCurrentUser, isSupabaseConfigured } from "@/lib/auth";
 import { isStripeConfigured } from "@/lib/stripe";
 import { getActivePersona } from "@/lib/demo-sandbox";
+import { withPilotUtm } from "@/lib/utm";
 
 export async function generateMetadata(
   props: PageProps<"/t/[slug]">,
@@ -66,15 +68,14 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
       </div>
 
       {entry.url && (
-        <a
-          href={`/out/${slug}`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <OutboundLink
+          href={withPilotUtm(entry.url, slug)}
+          slug={slug}
           className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13.5px] font-medium shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-sm)]"
           style={{ background: "var(--surface)", color: "var(--ink)" }}
         >
           View template ↗
-        </a>
+        </OutboundLink>
       )}
 
       <div className="mt-6 flex items-center gap-3">
