@@ -123,6 +123,9 @@ export default async function HomePage() {
         <div className="mx-auto flex max-w-[1160px] items-center gap-2 px-4 py-8 text-[13px] text-[var(--ink-faint)] sm:px-6">
           <CrownLogomark className="h-5 w-5" />
           ThemeCrown
+          <Link href="/marketplace-pulse" className="ml-auto hover:text-[var(--ink-soft)]">
+            Marketplace Pulse
+          </Link>
         </div>
       </footer>
     </main>
