@@ -67,7 +67,7 @@ export default async function TemplatePage(props: PageProps<"/t/[slug]">) {
 
       {entry.url && (
         <a
-          href={entry.url}
+          href={`/out/${slug}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13.5px] font-medium shadow-[var(--shadow-xs)] transition-shadow hover:shadow-[var(--shadow-sm)]"

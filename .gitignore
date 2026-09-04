@@ -30,3 +30,6 @@ next-env.d.ts
 
 # supabase
 /supabase/.temp
+
+# local click-tracking data (pilot referrer counts)
+/data/
