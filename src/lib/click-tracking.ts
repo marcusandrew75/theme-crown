@@ -1,40 +1,24 @@
 import "server-only";
 
-import { promises as fs } from "fs";
-import path from "path";
+import { readJsonBlob, writeJsonBlob } from "@/lib/blob-json-store";
 
 /**
- * Counts outbound clicks per listing for the referrer pilot. Plain JSON
- * file on disk rather than a database table — there's no Supabase project
- * connected yet, and this only needs to survive a single persistent-server
- * deployment (a VPS/Railway/Fly-style host) for the few weeks of a pilot.
- * On serverless hosts (Vercel, Netlify functions) each instance has its own
- * disk, so counts won't add up across instances or survive a redeploy —
- * move this to a `clicks` table once Supabase is connected instead.
+ * Counts outbound clicks per listing for the referrer pilot. Backed by
+ * Vercel Blob (see blob-json-store.ts) rather than a database table —
+ * there's no Supabase project connected yet, and this only needs to hold
+ * a handful of counters for the few weeks of a pilot.
  */
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const FILE = path.join(DATA_DIR, "clicks.json");
+const FILE = "clicks.json";
 
 type ClickCounts = Record<string, number>;
 
-async function readCounts(): Promise<ClickCounts> {
-  try {
-    const raw = await fs.readFile(FILE, "utf8");
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? parsed : {};
-  } catch {
-    return {};
-  }
-}
-
 export async function recordClick(slug: string): Promise<void> {
-  const counts = await readCounts();
+  const counts = await readJsonBlob<ClickCounts>(FILE, {});
   counts[slug] = (counts[slug] ?? 0) + 1;
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  await fs.writeFile(FILE, JSON.stringify(counts, null, 2));
+  await writeJsonBlob(FILE, counts);
 }
 
 export async function getClickCounts(): Promise<ClickCounts> {
-  return readCounts();
+  return readJsonBlob<ClickCounts>(FILE, {});
 }
