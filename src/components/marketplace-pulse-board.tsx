@@ -51,7 +51,7 @@ export function MarketplacePulseBoard({ boards }: { boards: Board[] }) {
 
   return (
     <>
-      <div className="relative mt-10">
+      <div className="relative mt-10 mb-6">
         <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1">
           {boards.map(({ category: c }) => {
             const isActive = c.slug === category.slug;
@@ -81,7 +81,7 @@ export function MarketplacePulseBoard({ boards }: { boards: Board[] }) {
         />
       </div>
 
-      <h2 className="mt-6 font-[family-name:var(--font-display)] text-[1.35rem] font-semibold sm:text-[1.6rem]">
+      <h2 className="font-[family-name:var(--font-display)] text-[1.35rem] font-semibold sm:text-[1.6rem]">
         {category.name}
       </h2>
 
